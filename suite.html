@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+     <nav> 
+        <a href="index.html" class="menu">accueil</a> <a href="language_c.html" class="menu">introduction</a> <a href="suite.html" class="menu">Partie 2</a>
+    </nav>
+
+    <h4>Cette partie est relativement plus compliqué que ce que tu viens de faire, prends bien ton temps de maitriser les notions avant de passer aux suivantes</h4>
+    <br><br>
+
+    <h3>les tableaux</h3>
+    <p>un tableau en programmation est une variable qui contient un nombre définis d'éléments de même type ce nombre s'appelle <strong>la taille</strong> du tableau, ils sont utile pour stocker un bon nombre de valeur de même type sans avoir à crée une variable pour chaque valeur</p>
+    <p>il existe plusieur manière de l'initialiser :</p>
+
+    <pre><code>
+        #include &lt;stdio.h&gt;
+        
+        int main(){
+            
+            int tab1[5] = {1,2,3,4,5}; <span class="indi">-> ici on explicite la taille entre crochet et on lui les donne les valeurs</span>
+
+            int tab2[] = {1,2,3,4,5}; <span class="indi">-> ici on ne dit pas la taille, le code le déduit</span>
+
+            int tab3[3];  <span class="indi">-> ici on déclare le tableau puis on lui donne les valeurs</span>
+            tab3[0] = 1; 
+            tab3[1] = 2;  <span class="indi">après la déclaration quand on lui donne des valeurs on lui dis la position du nombre entre crochet</span>
+            tab3[2] = 3;
+
+            return 0;
+        }
+    </code></pre>
+
+    <p>comme vu dans l'exmple les éléments du tableau, ont chacun une postion qui varie entre 0 et taille-1, si ton tableau est de taille 5, la postion des éléments varie entre 0 et 4, ce qui est utile a savoir quand on intialise les valeurs après déclaration</p>
+
+    <h3>Schéma pour comprendre</h3>
+
+    <table class="large-table">
+        <tr> <td class="no-bord">int tab1[3] = </td> <td>10</td> <td>25</td> <td>31</td> <td class="no-bord">-> taille = 3</td></tr>
+        <tr> <td class="no-bord"></td> <td class="no-bord">postion : 0</td> <td class="no-bord">position : 1</td> <td class="no-bord">postion : 2</td></tr>
+    </table>
+    
+    <h3>Récapitulatif</h3>
+
+    <table>
+        <tr>
+            <th>
+                initialisation
+            </th>
+            <th>
+                specificité
+            </th>
+        </tr>
+        <tr>
+            <td>
+                int tab[2]={1,2};
+            </td>
+            <td>
+                --
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                int tab[]={1,2};
+            </td>
+            <td>
+                --
+            </td>
+        </tr>
+        <tr>
+            <td>
+                int tab[2];
+                tab[0]=1;
+                tab[1]=2;
+            </td>
+            <td>
+                dans la déclaration le crochet définit la taille et dans l'initalisation des valeurs les crochets dis la position de la valeur dans le tableau
+            </td>
+        </tr>
+    </table>
+
+    <h3>Exercice</h3>
+
+    <p>tu devras crée 4 code :</p>
+    <ul>
+        <li>le premier, ou tu déclares et initalise 3 tableaux en utilisant la première méthode de l'éxemple</li>
+        <li>le deuxième, ou tu déclares et initalise 3 tableaux en utilisant la deuxième méthode de l'éxemple</li>
+        <li>le troisème, ou tu déclares et initalise 3 tableaux en utilisant la 3ème  méthode de l'éxemple, les valeurs du tableaux devront être mis grace a scanf vue en partie 1, la méthode est la même</li>
+        <li>le quatrième, ou tu vas prendre un des 3 code fait précedemment et tu vas initialiser des variables et affecter ces varaiables avec les valeur du tableau. Exemple : int x = tab[2]; </li>
+    </ul>
+
+    <p>tu as le choix des types pour les tableaux</p>
+
+    <h3>Les conditions</h3>
+    <p>on sait faire certaine opération, mais on aimerais aussi pouvoir avoir des conditions par exemple : si 1+3 > 3 alors on écrit que 1+3 est plus grand que 3.</p>
+    <p>pour cela on va utiliser des fonctions <strong>if</strong> ,<strong>else if</strong> et <strong>else</strong></p>
+
+        <pre><code>
+        #include &lt;stdio.h&gt;
+        
+        int main(){
+            
+            int x = 3;
+
+            int y = 5;
+
+            if(x+y > 2){
+                printf(x plus y est plus grand que 2);
+            }
+
+            else if(x+y < 2){
+                printf(x plus y est plus petit que 2);
+            }
+
+            else{
+                printf(x plus y est ni plus grand ni plus petit que 2);
+            }
+
+            return 0;
+        }
+    </code></pre>
+    <p>ici la condition <strong>if</strong> te dis "si x+2 est plus grand que 2 alors fais la commande qui se trouve dans les accolade {}, si ce n'est pas le cas continue le code normalement"</p>
+    <p>la condition <strong>else if</strong> est juste la suite du if on peut le traduire par "autrement x+2 est plus petit que 2 alors fais la commande qui se trouve dans les accolade {}, si ce n'est pas le cas continue le code normalement" </p>
+    <p>et si aucune de ces deux condition est rempli alors on fait ce qui se retrouve dans les accolades</p>
+
+    <p>Note : les symboles mathématiques pour comparer sont :</p>
+    <ul>
+        <li>< : est inférieur à</li>
+        <li>> :  est supérieur à</li>
+        <li><= : est  inférieur ou égal à</li>
+        <li>>= : est supérieur ou égale à</li>
+        <li>== : est égale à <span class="indi">&nbsp; ici le égale est différent de = , le double pour comparer, le simple pour affecter</span></li> 
+        <li>!= : est différent de</li>
+    </ul>
+    <br><br>
+
+        <h3>Récapitulatif</h3>
+        <table>
+            <tr>
+                <th>fonction</th>
+                <th>utilité</th>
+            </tr>
+            <tr>
+                <td>if</td>
+                <td>première condition, obligatoire pour faire des conditions</td>
+            </tr>
+            <tr>
+                <td>else if</td>
+                <td>si la condtion du if n'est pas rempli on vérifie la condition du else if, "else if" est optionnel</td>
+            </tr>
+            <tr>
+                <td>else</td>
+                <td>si ni la condtion du if , ni la condition de else if est rempli on fait le else qui lui n'a pas de condition explicite, "else" est optionnel</td>
+            </tr>
+        </table>
+
+        <h3>Exercice</h3>
+        <p>tu devras faire 3 codes</p>
+        <ul>
+            <li>un premier ou tu vas comparer des int comme dans l'exemple en utilisant les 3 fonctions if , else if et else</li>
+            <li>un deuxième ou tu vas comparer des float de la même manière que dans le premier exercice</li>
+            <li>une troisième ou tu fais ce que tu souhaites en mélangeant les différent comparateur mathématiques (< , > , etc ...)</li>
+        </ul>
+        <p>le code entre accolade tu en fais ce que tu veux</p>
+        <br><br>
+        <h3>Projet</h3>
+
+        <p>tu vas devoir reprendre le projet de calculatrice fait précedemment, et tu vas devoirs incorporé les notions vu ici. <br>
+        Tu vas faire un tableau de deux valeur, ta calculatrice va faire tout les calcules sauf la soustraction (x-y) et la division (x/y) : ces deux calcules seront fait a l'unique condition que x est plus grand ou égale a y</p>
+
+        <p>astuce : fait le code par étape : tu fais le tableau avec les valeurs entrée par l'utilisateur, puis tu fais les calcule sauf soustraction et division, puis tu fais les conditions</p>
+
+    <footer></footer>
+</body>
+</html>

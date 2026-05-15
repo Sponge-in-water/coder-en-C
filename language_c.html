@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Programmer" par Adel</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="Cbody">
+
+    <nav> 
+        <a href="index.css" class="menu">accueil</a> <a href="language_c.html" class="menu">introduction</a> <a href="suite.html" class="menu">Partie 2</a>
+    </nav>
+   
+    <h4>Avant de commencer, les exemples sont une part importante du cours il te faut les copier pour apprendre la syntaxe, je ne vais pas expliquer la syntaxe de chaque commande. Si lorsque tu fais ton code il ne marche pas vérifie les erreurs de syntaxe en regardant l'exemple</h4>
+
+    <h3>la syntaxe de base</h3>
+    <p>en C dans le code il faut inclure ce qu'on appelle des bibliothèques (c'est en gros un programme déja fais pour pouvoir coder plus facilement sans avoir a tout refaire a la main, la première a connaitre est <strong> stdio.h </strong>) de même qu'il faut inclure un main (on va simplement dire que c'est de la syntaxe pour le moment). 
+    comme suit : </p>
+    <pre><code>
+        #include &lt;stdio.h&gt;
+        
+        int main(){
+
+            return 0;
+        }
+    </code></pre>
+
+
+    <h3>variable et type de valeurs</h3>
+    <p>une variable est une valeur (un nombre, un nombre a virgule etc ...) que tu définis, et tu le fais en fonction de type qui va définir si c'est un nombre entier (1 , 2 , 3 , 4 ...), un nombre a virgule (1.2 , 2.3 ...) ou encore un caractère unique.
+    <br>
+    exemple comme suit :</p>
+     <pre><code>
+        #include &lt;stdio.h&gt;
+        
+        int main(){
+
+            int x = 5;     <span class="indi"> -> ici x vaut 5 et "int" définis le fais que x est un entier</span> 
+
+            float y = 4.5;   <span class="indi">-> ici y vaut 4.5 et "float" définis le fais que y est un nombre a virgule </span>
+
+            char x = 'A'; <span class="indi">-> ici x vaut A et "char" définis le fais que ce soit un caractère</span>
+
+            return 0;
+        }
+    </code></pre>
+
+    <p>A savoir qu'une variable peut être modifié au cours d'un code et peux ne pas avoir de valeur au départ</p>
+    <p>exemple</p>
+
+        <pre><code>
+        #include &lt;stdio.h&gt;
+        
+        int main(){
+
+            int x;
+
+            x = 6;  <span class="indi">note : on a pas besoin d'écrire le int car la variable a été initialiser juste en haut</span>
+
+            x = 10;
+
+            return 0;
+        }
+
+        <span class="indi">a la fin du code x vaut 10 et non 6</span>
+
+    </code></pre>
+
+    <h3>Récapitulatif</h3>
+    
+    <table>
+        <tr>
+            <th>type des variables</th> 
+            <th>fonctions</th>
+        </tr>
+        <tr>
+            <td>int</td> 
+            <td>nombre entier</td>
+        </tr>
+        <tr>
+        <td>float</td>
+        <td>nombre a virgule</td>
+        </tr>
+        <tr>
+            <td>char</td>
+            <td>Un seul caractère</td>
+        </tr>
+
+    </table>
+
+    <h3>Exercice</h3>
+    <ol>
+        <li>tu vas devoir initialiser 3 variables : un int, un float et un char. Tu as le choix des valeurs</li>
+        <li>tu vas devoir initialiser une valeur du type que tu souhaites sans valeur associé, puis tu lui donnes une valeur plus bas dans le code</li>
+    </ol>
+    
+    <br><br>
+    <h3>calcule simple</h3>
+    <p>ces variables peuvent être utile pour calculer : additionner, soustraire, multiplier, diviser la division est entière donc il n'y aura pas de virgule peu importe les valeurs calculer</p>
+        
+    <p>exemple comme suit :</p>
+
+     <pre><code>
+        #include &lt;stdio.h&gt;
+        
+        int main(){
+
+            int x = 5;
+            int y = 2;
+
+            int addition = x+y;  <span class="indi">-> ici la variable addition a pour valeur 7</span>
+
+            int soustraction = x-y; <span class="indi">-> ici la variable soustraction a pour valeur 3</span>
+
+            int multiplication = x*y; <span class="indi">-> ici la variable multiplication a pour valeur 10</span>
+
+            int division = x/y; <span class="indi">-> ici la variable division a pour valeur 2</span>
+        }
+
+    </code></pre>
+
+    <h3>Récapitulatif</h3>
+    <table>
+        <tr>
+            <th>symbole</th>
+            <th>fonctions</th>
+        </tr>
+        <tr>
+            <td>+</td>
+            <td>somme</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>soustraction</td>
+        </tr>
+        <tr>
+            <td>*</td>
+            <td>multiplication</td>
+        </tr>
+        <tr>
+        <td>/</td>
+        <td>division entière</td>
+        </tr>
+    </table>
+    <h3>affichage et interaction</h3>
+
+    <p>on peut calculer mais il faut pouvoir afficher ces résultats, ainsi on introduit les fonctions printf et scanf, printf c'est pour l'afficher, et scanf pour demander des valeurs a l'utilisateur sans accéder au code <br>
+        exemple : 
+    </p>
+         <pre><code>
+        #include &lt;stdio.h&gt;
+        
+        int main(){
+
+            int x;
+
+            scanf("%d", &x); <span class="indi">-> ici la fonction va attendre une entrée de l'utilisateur dans le terminale pour affecter la valeur entrée a la variable x</span>
+
+            int y = 2;
+
+            int resultats = x+y;  <span class="indi">-> ici la variable résultats a pour valeur (x+2)</span>
+
+            printf("le résultat est %d", resultats); <span class="indi">-> ici la fonction va afficher la valeur de la variable "resultats" dans le terminale avec du texte</span>
+        }
+
+    <span class="indi">note : le %d correspond au type de la variable, si les valeurs auraient été des nombres a virgule (aussi dit des floats) on aurait mis %f</span>
+
+    </code></pre>
+    <p>la fonction printf est quasiment vitale pour savoir si ce que tu fais fonctionne comme voulu utilise le souvent</p>
+
+    <h3>Récapitulatif</h3>
+    <table>
+        <tr>
+            <th>commande</th>
+            <th>fonction</th>
+        </tr>
+        <tr>
+            <td>printf</td>
+            <td>affichage de texte ou valeur</td>
+        </tr>
+        <tr>
+            <td>scanf</td>
+            <td>acquisiton de valeurs entré par l'utilisateur</td>
+        </tr>
+    </table>
+
+
+    <h3>le terminale</h3>
+    <p>le terminale te permet d'entrer des commandes, pour compiler ton programme (compiler c'est en gros dire a ton ordinateur de traduire le code dans son language), pour éxecuter ton programme (le lancer), crée des fichiers, des dossiers, en supprimer etc...</p>
+    <p>pour y accéder tu as deux moyens soit tu ouvres l'application qui est déjà télécharger dans ton ordinateur, soit tu l'ouvres depuis Vscode, regarde l`images pour savoir comment faire depuis VScode(regarde le curseur en haut a droite)</p>
+    <img src="images/Capture d’écran 2026-05-04 à 11.20.50.png" alt="ouvrir terminale" class="pres"> 
+    
+    <p>maintenant que c'est ouvert tu vas devoir compiler ton programme puis l'éxecuter tu devras tapper 2 commandes </p>
+    <pre><code>
+        gcc -Wall [nom.c]  <span class="indi">-> commande pour compiler, [nom.c] correspond au nom du fichier </span>
+
+        et
+
+        ./a.out <span class="indi">->commande pour éxecuter</span>
+    </code></pre>
+    
+    <img src="images/Capture d’écran 2026-05-04 à 11.22.30.png" alt="commande sur terminale" class="pres"> 
+
+    <h3>Récapitulatif</h3>
+
+    <table>
+        <tr>
+            <th>commande</th>
+            <th>fonction</th>
+        </tr>
+        <tr>
+            <td>gcc -Wall [fichier.c]</td>
+            <td>compile le programme</td>
+        </tr>
+        <tr>
+            <td>./a.out</td>
+            <td>éxecute le programme</td>
+        </tr>
+    </table>
+
+    <h3 id="6">Exercice</h3>
+    <p>tu vas devoir crée 3 code</p>
+    <ul>
+        <li>un premier ou tu vas initialiser un <strong>int x</strong> et un <strong>int y</strong> a valeurs fixe puis faire affecter leur somme a une variable <strong>int resultat</strong> et afficher le résultat</li>
+        <li>un deuxième où tu vas devoir initialiser deux variables <strong>int x</strong> et <strong>int y</strong> a valeur entrée par l'utilisateur puis tu vas affecter le résultat a une variable quelconque dont tu vas afficher le résultat</li>
+        <li>un troisième ou tu fais ce que tu veux a la seul condition que toute les notions vue y sont présente</li>
+    </ul>
+     <p>note : n'hésite pas a faire une première fois avec le cours sous les yeux  pour comprendre avant d'essayer de refaire sans</p>
+
+
+     <h3>Projet</h3>
+     <p>le projet a faire est une calculatrice qui fonctionne avec les commandes : ton code va prendre deux valeurs float grâce au scanf puis tu vas effectuer tout les calculs avec ces valeurs et afficher ces résultats. <br>Garde ce programme dans un coin on va l'utiliser pour la suite</p>
+     <footer></footer>
+</body>
+</html>
